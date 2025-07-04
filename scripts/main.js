@@ -1,6 +1,8 @@
 const heading = document.querySelector("h1");
 heading.textContent = "Hello, World!";
 
+//document.querySelector("html").addEventListener("click", () => {
+//匿名函数
 document.querySelector("html").addEventListener("click", function () {
   alert("别戳我，我怕疼！");
 });
