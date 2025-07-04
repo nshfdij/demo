@@ -1,6 +1,10 @@
 const heading = document.querySelector("h1");
 heading.textContent = "Hello, World!";
 
+document.querySelector("html").addEventListener("click", function () {
+  alert("别戳我，我怕疼！");
+});
+
 //使用解构语法赋值
 //将foo对象中属性名与之相同的属性的值赋给变量bar
 const { bar } = foo;
