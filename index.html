@@ -42,6 +42,7 @@
         <li>thinkers</li>
         <li>builders</li>
       </ul>
+      <hr />
 
       <h2>有序列表</h2>
       <ol>
@@ -51,6 +52,7 @@
         <li>在第三个十字路口处左转</li>
         <li>继续走 300 米，学校就在你的右手边</li>
       </ol>
+      <hr />
 
       <h2>描述列表</h2>
       <dl>
@@ -68,6 +70,7 @@
           戏剧中，为渲染幽默或戏剧性效果而进行的场景之外的补充注释念白，只面向观众，内容一般都是角色的感受、想法、以及一些背景信息等。
         </dd>
       </dl>
+      <hr />
 
       <h2>粗体,斜体,下划线的使用</h2>
       <!-- 学名 -->
@@ -92,24 +95,256 @@
         <dt>语义化 HTML</dt>
         <dd>根据元素的<b>语义</b>意义而不是外观来使用它们。</dd>
       </dl>
+      <hr />
+      <h2>表格</h2>
+      <table>
+        <colgroup>
+          <col class="col1" />
+          <col class="col2" />
+          <col class="col3" />
+          <col class="col4" />
+          <col class="col5" />
+        </colgroup>
+        <tr>
+          <td>&nbsp;</td>
+          <td>诺基</td>
+          <td>弗洛尔</td>
+          <td>艾拉</td>
+          <td>胡安</td>
+        </tr>
+        <tr>
+          <td>品种</td>
+          <td>杰克罗斯犬</td>
+          <td>贵宾犬</td>
+          <td>流浪犬</td>
+          <td>可卡犬</td>
+        </tr>
+        <tr>
+          <td>年龄</td>
+          <td>16</td>
+          <td>9</td>
+          <td>10</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>主人</td>
+          <td>岳母</td>
+          <td>我</td>
+          <td>我</td>
+          <td>嫂子</td>
+        </tr>
+        <tr>
+          <td>饮食习惯</td>
+          <td>吃掉所有人的剩菜</td>
+          <td>啃咬食物</td>
+          <td>吃得多</td>
+          <td>吃到爆炸为止</td>
+        </tr>
+      </table>
+      <h2>进阶表格</h2>
+      <table class="evaluation">
+        <caption>
+          How I chose to spend my money
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Purchase</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Evaluation</th>
+            <th scope="col">Cost (€)</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="4">SUM</td>
+            <td>118</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Haircut</td>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>Great idea</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Lasagna</td>
+            <td>Restaurant</td>
+            <td>12/09</td>
+            <td>Regrets</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Shoes</td>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>Big regrets</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>Toothpaste</td>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <table id="table1">
+        <h2>嵌套表格</h2>
+        <tr>
+          <th>标题 1</th>
+          <th>标题 2</th>
+          <th>标题 3</th>
+        </tr>
+        <tr>
+          <td id="nested">
+            <table id="table2">
+              <tr>
+                <td>单元格 1</td>
+                <td>单元格 2</td>
+                <td>单元格 3</td>
+              </tr>
+            </table>
+          </td>
+          <td>单元格 2</td>
+          <td>单元格 3</td>
+        </tr>
+        <tr>
+          <td>单元格 4</td>
+          <td>单元格 5</td>
+          <td>单元格 6</td>
+        </tr>
+      </table>
+      <form action="./submit_page" method="get">
+        <h2>Subscribe to our newsletter</h2>
+        <p>
+          <label for="name">Name (required):</label>
+          <input type="text" name="name" id="name" required />
+        </p>
+        <p>
+          <label for="email">Email (required):</label>
+          <input type="email" name="email" id="email" required />
+        </p>
+        <p>
+          <button type="submit">Sign me up!</button>
+          <button type="reset">Clear</button>
+        </p>
+      </form>
+      <hr />
+      <form action="./payment_page" method="get">
+        <h2>Register for the meetup</h2>
+        <fieldset>
+          <legend>Choose hotel room type:</legend>
+          <!-- 单选radio -->
+          <div>
+            <input
+              type="radio"
+              id="hotelChoice1"
+              name="hotel"
+              value="economy"
+              checked
+            />
+            <label for="hotelChoice1">Economy (+$0)</label>
 
-      <section>内容</section>
+            <input
+              type="radio"
+              id="hotelChoice2"
+              name="hotel"
+              value="superior"
+            />
+            <label for="hotelChoice2">Superior (+$50)</label>
 
+            <input
+              type="radio"
+              id="hotelChoice3"
+              name="hotel"
+              value="penthouse"
+              disabled
+            />
+            <label for="hotelChoice3">Penthouse (+$150)</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <!-- 复选框checkbox -->
+          <legend>Choose classes to attend:</legend>
+          <div>
+            <input type="checkbox" id="yoga" name="yoga" />
+            <label for="yoga">Yoga (+$10)</label>
+
+            <input type="checkbox" id="coffee" name="coffee" />
+            <label for="coffee">Coffee roasting (+$20)</label>
+
+            <input type="checkbox" id="balloon" name="balloon" />
+            <label for="balloon">Balloon animal art (+$5)</label>
+          </div>
+        </fieldset>
+        <p>
+          <!-- select下拉选择框 -->
+          <label for="transport">How are you getting here:</label>
+          <select name="transport" id="transport">
+            <option value="">--Please choose an option--</option>
+            <option value="plane">Plane</option>
+            <option value="bike">Bike</option>
+            <option value="walk">Walk</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+            <option value="jetPack">Jet pack</option>
+          </select>
+        </p>
+        <p>
+          <label for="comments">Any other comments:</label>
+          <!-- 文本区域 -->
+          <textarea id="comments" name="comments" rows="5" cols="33"></textarea>
+        </p>
+        <p>
+          <button type="submit">Continue to payment</button>
+        </p>
+      </form>
+      <hr />
+
+      <audio
+        controls
+        src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/media-embed/media/audio.mp3"
+      ></audio>
+      <video controls width="320" height="240" muted>
+        <!-- MP4 格式的视频资源，适用于大多数浏览器 -->
+        <source
+          src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/media-embed/media/video.mp4"
+          type="video/mp4"
+        />
+        <!-- WebM 格式的视频资源，适用于支持 WebM 的浏览器 -->
+        <source
+          src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/media-embed/media/video.webm"
+          type="video/webm"
+        />
+        <!-- 字幕轨道，提供英文字幕 -->
+        <track
+          kind="subtitles"
+          src="https://raw.githubusercontent.com/mdn/learning-area/refs/heads/main/html/multimedia-and-embedding/tasks/media-embed/media/subtitles_en.vtt"
+          srclang="en"
+          label="English"
+        />
+      </video>
       <aside>
         <h2>侧边栏</h2>
         <ul>
           <li><a>Mozilla Manifesto</a></li>
           <li><a href="">Mozilla Manifesto</a></li>
           <li>
-            <a href="https://www.mozilla.org/zh-CN/about/manifesto/"
+            <a
+              href="https://www.mozilla.org/zh-CN/about/manifesto/"
+              target="_self"
               >Mozilla Manifesto</a
             >
           </li>
           <li>
             <a href="https://developer.mozilla.org/zh-CN/">
-              <img src="mdn_logo.svg" alt="MDN Web 文档" />
+              <img src="mdn_logo.svg" alt="MDN Web 文档" title="MDN Web 文档" />
             </a>
-            <a href="thing.html">Things触发</a>
+            <a href="thing.html" target="_blank">Things触发</a>
           </li>
         </ul>
       </aside>
