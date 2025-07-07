@@ -11,23 +11,109 @@
     />
   </head>
   <body>
-    <img src="images/firefox-icon.jpg" alt="My test image" />
-    <h1>nihao</h1>
-    <p>At Mozilla, we're a global community of</p>
-    <ul>
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
+    <header>
+      <h2>头部</h2>
+      <h2>nihao</h2>
+      <p>At Mozilla, we're a global community of...</p>
+    </header>
+    <nav>
+      <h2>导航</h2>
+      <ul>
+        <li><a href="https://www.mozilla.org/zh-CN/">Mozilla</a></li>
+        <li><a href="https://www.mozilla.org/zh-CN/about/">About</a></li>
+        <li><a href="https://www.mozilla.org/zh-CN/products/">Products</a></li>
+        <li>
+          <a href="https://www.mozilla.org/zh-CN/contribute/">Contribute</a>
+        </li>
+        <li><a href="https://www.mozilla.org/zh-CN/contact/">Contact</a></li>
+      </ul>
+      <form>
+        <!-- 搜索栏是站点内导航的一个非线性的方式。 -->
+        <input type="search" name="q" placeholder="要搜索的内容" />
+        <input type="submit" value="搜索" />
+      </form>
+    </nav>
+    <main>
+      <h2>主要内容</h2>
 
-    <p>working together…</p>
-    <a>Mozilla Manifesto</a>
-    <a href="">Mozilla Manifesto</a>
-    <a href="https://www.mozilla.org/zh-CN/about/manifesto/">
-      Mozilla Manifesto
-    </a>
-    <button type="button">Change user</button>
-    <h1></h1>
-    <script src="scripts/main2.js"></script>
+      <h2>无序列表</h2>
+      <ul>
+        <li>technologists</li>
+        <li>thinkers</li>
+        <li>builders</li>
+      </ul>
+
+      <h2>有序列表</h2>
+      <ol>
+        <li>沿这条路走到头</li>
+        <li>右转</li>
+        <li>直行穿过第一个十字路口</li>
+        <li>在第三个十字路口处左转</li>
+        <li>继续走 300 米，学校就在你的右手边</li>
+      </ol>
+
+      <h2>描述列表</h2>
+      <dl>
+        <!-- dd 描述列表项 dt 描述列表项标题 -->
+        <dt>内心独白</dt>
+        <dd>
+          戏剧中，某个角色对自己的内心活动或感受进行念白表演，这些台词只面向观众，而其他角色不会听到。
+        </dd>
+        <dt>语言独白</dt>
+        <dd>
+          戏剧中，某个角色把自己的想法直接进行念白表演，观众和其他角色都可以听到。
+        </dd>
+        <dt>旁白</dt>
+        <dd>
+          戏剧中，为渲染幽默或戏剧性效果而进行的场景之外的补充注释念白，只面向观众，内容一般都是角色的感受、想法、以及一些背景信息等。
+        </dd>
+      </dl>
+
+      <h2>粗体,斜体,下划线的使用</h2>
+      <!-- 学名 -->
+      <p>
+        <strong>红喉北蜂鸟</strong>（学名：<i>Archilocus colubris</i
+        >）是北美东部最常见的蜂鸟品种。
+      </p>
+
+      <!-- 舶来词 -->
+      <p>
+        菜单上有好多舶来词汇，比如
+        <i lang="uk-latn">vatrushka</i>（东欧乳酪面包）、
+        <i lang="id">nasi goreng</i>（印尼炒饭）以及
+        <i lang="fr">soupe à l'oignon</i>（法式洋葱汤）。
+      </p>
+
+      <!-- 已知的错误书写 -->
+      <p>总有一天我会改掉写<u class="spelling-error">措字</u>的毛病。</p>
+
+      <!-- 在定义中，被定义的术语 -->
+      <dl>
+        <dt>语义化 HTML</dt>
+        <dd>根据元素的<b>语义</b>意义而不是外观来使用它们。</dd>
+      </dl>
+
+      <section>内容</section>
+
+      <aside>
+        <h2>侧边栏</h2>
+        <ul>
+          <li><a>Mozilla Manifesto</a></li>
+          <li><a href="">Mozilla Manifesto</a></li>
+          <li>
+            <a href="https://www.mozilla.org/zh-CN/about/manifesto/"
+              >Mozilla Manifesto</a
+            >
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/zh-CN/">
+              <img src="mdn_logo.svg" alt="MDN Web 文档" />
+            </a>
+            <a href="thing.html">Things触发</a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+    <footer><h2>页脚</h2></footer>
   </body>
 </html>
