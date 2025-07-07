@@ -83,6 +83,7 @@ function checkGuess() {
   guessField.value = ""; // 清空输入框
   guessField.focus(); // 聚焦输入框，方便继续
 }
+guessSubmit.addEventListener("click", checkGuess);
 
 function setGameOver() {
   guessField.disabled = true;
@@ -92,3 +93,26 @@ function setGameOver() {
   document.body.append(resetButton);
   resetButton.addEventListener("click", resetGame);
 }
+function resetGame() {
+  guessCount = 1;
+  const resetParas = document.querySelectorAll(".resultParas p");
+  for (const resetPara of resetParas) {
+    resetPara.textContent = "";
+  }
+  guessField.disabled = false;
+  guessSubmit.disabled = false;
+  guessField.value = "";
+  guessField.focus();
+  lastResult.style.backgroundColor = "white";
+  randomnum = Math.floor(Math.random() * 100) + 1;
+  resetButton.parentNode.removeChild(resetButton);
+}
+
+const button1 = document.querySelector("#button1");
+const heading1 = document.querySelector("#heading1");
+let clickCount = 1;
+button1.addEventListener("click", () => {
+  button1.textContent = "again";
+  heading1.textContent = clickCount + " clicks now";
+  clickCount++;
+});
