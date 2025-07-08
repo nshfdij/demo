@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    select {
+      width: 200px;
+      height: 150px;
+    }
+    span {
+      font-weight: bold;
+      display: block;
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <label for="myMonth">月份</label>
+    <input type="text" name="myMonth" id="myMonth" />
+    <button type="button" onclick="showMonthName()">获取月份名称</button><br />
+    <span id="monthName"></span>
+
+    <form name="selectForm">
+      <p>
+        <label for="musicTypes"
+          >Choose some music types, then click the button below:</label
+        >
+        <select id="musicTypes" name="musicTypes" multiple="multiple">
+          <option selected="selected">R&B</option>
+          <option>爵士</option>
+          <option>布鲁斯</option>
+          <option>新纪元</option>
+          <option>古典</option>
+          <option>歌剧</option>
+        </select>
+      </p>
+      <p><input id="btn" type="button" value="选择了多少个选项？" /></p>
+    </form>
+    <a href="javascript:void(0)">Click here to do nothing</a>
+    <br />
+    <button type="button" onclick="showClock()">显示时钟</button>
+    <span id="clock"></span>
+    <br />
+    <button type="button" onclick="showDaysLeft()">显示今年剩余天数</button>
+    <span id="daysLeft"></span><br />
+    <form action="#">
+      <label for="phone">输入电话号码，判断号码格式</label>
+      <input id="phone" /><button
+        type="button"
+        onclick="testInfo(document.getElementById('phone'));"
+      >
+        Check
+      </button>
+    </form>
+    <span id="result"></span>
+    <script src="./scripts/7_8.js"></script>
+  </body>
+</html>
