@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        width: 200px;
+        height: 20px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+      }
+      .error-message {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="age">年龄(18~99)：</label>
+    <input
+      type="text"
+      name="age"
+      size="3"
+      onChange="validate(this, 18, 99)"
+      title="请输入您的年龄"
+      placeholder="请输入您的年龄"
+    />
+    <span class="error-message" id="error-message"></span>
+    <hr />
+    <h2>数据获取示例</h2>
+    <button id="fetchBtn" type="button">获取数据</button>
+    <div id="loading" style="display: none">正在加载...</div>
+    <div id="result"></div>
+    <div id="error" style="color: red; display: none"></div>
+
+    <script src="scripts/7_9.js"></script>
+  </body>
+</html>
