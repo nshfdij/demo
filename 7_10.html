@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/7_10.css" />
+  </head>
+  <body>
+    <label for="name">name:</label>
+    <input type="text" name="name" id="name" />
+    <label for="delay">delay:</label>
+    <input type="number" name="delay" id="delay" />
+    <button type="button" id="set-alarm">Set alarm</button>
+    <div id="output"></div>
+    <br />
+    <form action="https://example.com/contact" method="post">
+      <fieldset class="contact-form">
+        <legend>Contact Form</legend>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="John Doe" required />
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="john@example.com"
+            required
+          />
+        </p>
+        <p>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required>
+Hello, I would like to contact you.</textarea
+          >
+        </p>
+        <p class="button">
+          <button type="submit">Submit</button>
+        </p>
+      </fieldset>
+    </form>
+    <br />
+    <form method="post">
+      <h1>Payment form</h1>
+      <p>
+        Required fields are followed by
+        <strong><span aria-label="required">*</span></strong
+        >.
+      </p>
+      <section>
+        <h2>Contact information</h2>
+        <fieldset>
+          <legend>Title</legend>
+          <ul>
+            <li>
+              <label for="title_1">
+                <input type="radio" id="title_1" name="title" value="A" />
+                Ace
+              </label>
+            </li>
+            <li>
+              <label for="title_2">
+                <input type="radio" id="title_2" name="title" value="K" />
+                King
+              </label>
+            </li>
+            <li>
+              <label for="title_3">
+                <input type="radio" id="title_3" name="title" value="Q" />
+                Queen
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <p>
+          <label for="name">
+            <span>Name: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="text" id="name" name="username" required />
+        </p>
+        <p>
+          <label for="mail">
+            <span>Email: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="email" id="mail" name="user-mail" required />
+        </p>
+        <p>
+          <label for="pwd">
+            <span>Password: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="password" id="pwd" name="password" required />
+        </p>
+      </section>
+      <section>
+        <h2>Payment information</h2>
+        <p>
+          <label for="card">
+            <span>Card type:</span>
+          </label>
+          <select id="card" name="user-card">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Card number:</span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="tel" id="number" name="card-number" />
+        </p>
+        <p>
+          <label for="expiration">
+            <span>Expiration date:</span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            type="text"
+            id="expiration"
+            required="true"
+            placeholder="MM/YY"
+            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"
+          />
+        </p>
+      </section>
+      <section>
+        <p><button type="submit">Validate the payment</button></p>
+      </section>
+      <section>
+        <fieldset>
+          <legend>What is your favorite meal?</legend>
+          <ul>
+            <li>
+              <label for="soup">Soup</label>
+              <input type="radio" id="soup" name="meal" value="soup" checked />
+            </li>
+            <li>
+              <label for="curry">Curry</label>
+              <input type="radio" id="curry" name="meal" value="curry" />
+            </li>
+            <li>
+              <label for="pizza">Pizza</label>
+              <input
+                type="radio"
+                id="pizza"
+                name="meal"
+                value="pizza"
+                disabled
+              />
+            </li>
+          </ul>
+        </fieldset>
+      </section>
+      <br />
+      <section>
+        <form>
+          <fieldset>
+            <legend>Fruit preferences</legend>
+
+            <p>
+              <label>
+                <input type="checkbox" name="fruit" value="cherry" />
+                I like cherry
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" name="fruit" value="banana" disabled />
+                I can't like banana
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" name="fruit" value="strawberry" />
+                I like strawberry
+              </label>
+            </p>
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <form
+          method="post"
+          action="https://www.foo.com"
+          enctype="multipart/form-data"
+        >
+          <div>
+            <label for="file">Choose a file</label>
+            <input type="file" id="file" name="myFile" />
+          </div>
+          <div>
+            <button type="submit">Send the file</button>
+          </div>
+        </form>
+
+        <p>
+          <label for="price">Choose a maximum house price: </label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            min="50000"
+            max="500000"
+            step="1000"
+            value="250000"
+          />
+          <output class="price-output" for="price"></output>
+        </p>
+
+        <p>
+          <label for="date">Choose a date: </label>
+          <input type="date" name="date" id="date" />
+        </p>
+        <p>
+          <label for="datetime">Choose a date and time: </label>
+          <input type="datetime-local" name="datetime" id="datetime" />
+        </p>
+        <p>
+          <label for="time">Choose a time: </label>
+          <input type="time" name="time" id="time" />
+        </p>
+        <p>
+          <progress max="100" value="75">75/100</progress>
+        </p>
+        <p>
+          <label for="search">search: </label>
+          <input id="search" name="search" type="search" />
+        </p>
+      </section>
+      <section>
+        <label for="groups">Choose a group:</label>
+        <select id="groups" name="groups">
+          <optgroup label="fruits">
+            <option>Banana</option>
+            <option selected>Cherry</option>
+            <option>Lemon</option>
+          </optgroup>
+          <optgroup label="vegetables">
+            <option>Carrot</option>
+            <option>Eggplant</option>
+            <option>Potato</option>
+          </optgroup>
+        </select>
+      </section>
+    </form>
+
+    <script src="./scripts/7_10.js"></script>
+  </body>
+</html>
