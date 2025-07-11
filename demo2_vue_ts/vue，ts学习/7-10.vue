@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
 // TypeScript 类型系统
 
 let isDone: boolean = false;
@@ -16,9 +19,8 @@ let lists: Array<number> = [1, 2, 3];
 let names: string = "bob";
 let age: number = 25;
 let sentence: string = "Hello, world!";
-sentence = `Hello, my name is ${names}. I'll be ${
-  age + 1
-} years old next month.`;
+sentence = `Hello, my name is ${names}. I'll be ${age + 1
+  } years old next month.`;
 
 //元组类型
 let x: [string, number];
@@ -27,31 +29,35 @@ console.log(x[0].substring(1));
 
 let person: { name: string; age: number } = { name: "Alice", age: 30 };
 
+function changeName(newName: string) {
+  person.name = newName;
+}
+
 //枚举类型
 // enum Color { Red, Green, Blue }
 // let c: Color = Color.Green;
 // console.log(c);
 
-let notSure: any = 4;
-notSure.ifItExists(); // okay, ifItExists might exist at runtime
-notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+// let notSure: any = 4;
+// notSure.ifItExists(); // okay, ifItExists might exist at runtime
+// notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
 
 //let prettySure: Object = 4;
 //prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
 
-//void类型
-function warnUser(): void {
-  console.log("This is my warning message");
-}
+// //void类型
+// function warnUser(): void {
+//   console.log("This is my warning message");
+// }
 
-//null和undefined类型
-let u: undefined = undefined;
-let n: null = null;
+// //null和undefined类型
+// let u: undefined = undefined;
+// let n: null = null;
 
-//never类型
-function error(message: string): never {
-  throw new Error(message);
-}
+// //never类型
+// function error(message: string): never {
+//   throw new Error(message);
+// }
 
 //类型断言
 // let someValue: any = "this is a string";
@@ -76,3 +82,24 @@ function f(input: boolean) {
   // Error: 'b' doesn't exist here
   // return b;
 }
+
+defineProps<{ msg: string }>()
+
+const count = ref(0)
+</script>
+
+<template>
+  <div class="card">
+    <button type="button" @click="count++">count is {{ count }}</button>
+    <p>
+      <button type="button" @click="changeName('person')">好累</button>
+      {{ person.age }}岁的{{ person.name }}
+    </p>
+  </div>
+</template>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
