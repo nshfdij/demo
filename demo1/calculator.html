@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      label {
+        display: block;
+      }
+      input[type="text"] {
+        width: 58%;
+        height: 50px;
+        border: solid 1px #ccc;
+        border-radius: 8px;
+        font-size: 20px;
+        text-align: right;
+        padding: 10px;
+      }
+      #result {
+        height: 40px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        font-size: 24px;
+        height: 300px;
+      }
+      td {
+        border: 0px #ccc;
+        padding: 2px;
+      }
+      input[type="button"] {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #ccc;
+        border-radius: 8px;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+      }
+      input[type="button"]:hover {
+        background-color: #ccc;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="input">input:</label><br />
+      <input type="text" id="display" value="0" title="input" readonly />
+      <br />
+      <label for="result">result:</label><br />
+      <input type="text" id="result" value="0" title="result" readonly />
+    </div>
+    <br />
+    <table>
+      <tr>
+        <td>
+          <input type="button" value="C" onclick="handleOpearation('C')" />
+        </td>
+        <td>
+          <input type="button" value="del" onclick="handleOpearation('del')" />
+        </td>
+        <td>
+          <input type="button" value="%" onclick="handleOpearation('%')" />
+        </td>
+        <td>
+          <input type="button" value="/" onclick="handleOpearation('\/')" />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" onclick="handleOpearation(7)" /></td>
+        <td><input type="button" value="8" onclick="handleOpearation(8)" /></td>
+        <td><input type="button" value="9" onclick="handleOpearation(9)" /></td>
+        <td>
+          <input type="button" value="*" onclick="handleOpearation('*')" />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="handleOpearation(4)" /></td>
+        <td><input type="button" value="5" onclick="handleOpearation(5)" /></td>
+        <td><input type="button" value="6" onclick="handleOpearation(6)" /></td>
+        <td>
+          <input type="button" value="-" onclick="handleOpearation('-')" />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="handleOpearation(1)" /></td>
+        <td><input type="button" value="2" onclick="handleOpearation(2)" /></td>
+        <td><input type="button" value="3" onclick="handleOpearation(3)" /></td>
+        <td>
+          <input type="button" value="+" onclick="handleOpearation('+')" />
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="\" /></td>
+        <td><input type="button" value="0" onclick="handleOpearation(0)" /></td>
+        <td>
+          <input type="button" value="." onclick="handleOpearation('.')" />
+        </td>
+        <td>
+          <input type="button" value="=" onclick="handleResult()" />
+        </td>
+      </tr>
+    </table>
+    <script src="scripts/7_14.js"></script>
+  </body>
+</html>
