@@ -1,24 +1,24 @@
-<script setup lang="ts">
-import Helloworld from './components/Helloworld.vue'
-</script>
-
 <template>
-  <Helloworld />
+  <div class="app">
+    <h1>你好啊！</h1>
+    <Person/>
+  </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+<script lang="ts">
+  import Person from './components/Person.vue'
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+  export default {
+    name:'App', //组件名
+    components:{Person} //注册组件
+  }
+</script>
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style>
+  .app {
+    background-color: #ddd;
+    box-shadow: 0 0 10px;
+    border-radius: 10px;
+    padding: 20px;
+  }
 </style>

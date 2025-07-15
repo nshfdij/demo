@@ -36,6 +36,8 @@
 
       .row {
         display: flex;
+        line-height: 0; /* 添加行高设置避免额外间距 */
+        margin: 0; /* 确保行间距为0 */
       }
 
       .cell {
@@ -49,6 +51,8 @@
         font-weight: bold;
         font-size: 14px;
         cursor: pointer;
+        box-sizing: border-box; /* 添加盒模型设置 */
+
         -webkit-user-select: none; /* Safari 3+, iOS Safari 3+ */
         -moz-user-select: none; /* Firefox 1+ */
         -ms-user-select: none; /* Internet Explorer 10+ */
@@ -56,20 +60,23 @@
       }
 
       .cell.revealed {
-        border: 1px solid #999;
+        border: 2px inset #999; /* 改为2px保持一致厚度 */
         background-color: #e0e0e0;
       }
 
       .cell.flagged {
         background-color: #ffff99;
+        border: 2px outset #c0c0c0; /* 确保边框厚度一致 */
       }
 
       .cell.mine {
         background-color: #ff4444;
+        border: 2px inset #999; /* 确保边框厚度一致 */
       }
 
       .cell.mine-exploded {
         background-color: #ff0000;
+        border: 2px inset #999; /* 确保边框厚度一致 */
       }
 
       .number-1 {

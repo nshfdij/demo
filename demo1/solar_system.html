@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System 3D</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+      #info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 100;
+      }
+      #controls {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        z-index: 100;
+      }
+      button {
+        margin: 5px;
+        padding: 8px 15px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      <h3>高级太阳系模拟器</h3>
+      <p>当前视角: <span id="camera-mode">自由视角</span></p>
+      <p>时间倍速: <span id="time-scale">1x</span></p>
+      <p>鼠标左键: 旋转视角</p>
+      <p>鼠标滚轮: 缩放</p>
+      <p>右键拖拽: 平移</p>
+    </div>
+
+    <div id="controls">
+      <button onclick="solarSystem.followPlanet('地球')">跟随地球</button>
+      <button onclick="solarSystem.followPlanet('火星')">跟随火星</button>
+      <button onclick="solarSystem.followPlanet('木星')">跟随木星</button>
+      <button onclick="solarSystem.resetCamera()">重置视角</button>
+      <button onclick="solarSystem.toggleOrbits()">显示/隐藏轨道</button>
+      <button onclick="solarSystem.toggleSpeed()">切换速度</button>
+    </div>
+    <script src="./scripts/solar_system.js"></script>
+  </body>
+</html>
