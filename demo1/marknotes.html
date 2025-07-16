@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes 笔记应用</title>
+    <link rel="stylesheet" href="./styles/marknotes.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>markNotes</h1>
+      </div>
+      <div class="controls">
+        <button type="button" class="btn btn-primary" onclick="createNote()">
+          新建笔记
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="deleteNote()"
+          id="deleteBtn"
+          disabled
+        >
+          删除笔记
+        </button>
+        <button type="button" class="btn btn-primary" onclick="exportNotes()">
+          导出笔记
+        </button>
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="搜索笔记..."
+            onkeyup="searchNotes(this.value)"
+          />
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="sidebar">
+          <ul class="note-list" id="noteList">
+            <!-- 笔记列表将在这里动态生成 -->
+          </ul>
+        </div>
+
+        <div class="editor-container">
+          <div id="editorContent">
+            <div class="editor-header">
+              <input
+                type="text"
+                class="title-input"
+                id="titleInput"
+                placeholder="输入笔记标题..."
+                onkeyup="updateNote()"
+              />
+              <div class="format-toggle">
+                <button
+                  type="button"
+                  class="format-btn active"
+                  onclick="toggleFormat('text')"
+                >
+                  文本
+                </button>
+                <button
+                  type="button"
+                  class="format-btn"
+                  onclick="toggleFormat('markdown')"
+                >
+                  Markdown
+                </button>
+              </div>
+            </div>
+
+            <div class="editor-area">
+              <textarea
+                class="content-input"
+                id="contentInput"
+                placeholder="开始写下您的想法..."
+                onkeyup="updateNote()"
+              ></textarea>
+              <div
+                class="preview-area"
+                id="previewArea"
+                style="display: none"
+              ></div>
+            </div>
+          </div>
+
+          <div class="empty-state" id="emptyState">
+            <h3>欢迎使用 Notes 应用！</h3>
+            <p>点击"新建笔记"开始创建您的第一个笔记</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/marknotes.js"></script>
+  </body>
+</html>

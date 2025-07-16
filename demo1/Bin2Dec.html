@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>二进制转十进制</title>
+  </head>
+  <body>
+    <label for="bin">请输入二进制数(最多8位数)：</label>
+    <input type="text" id="bin" />
+    <button type="button" onclick="convert()">转换</button>
+    <p id="result"></p>
+    <script>
+      function convert() {
+        var bin = document.getElementById("bin").value;
+        if (bin.length > 8) {
+          alert("请输入8位以内的二进制数！");
+        } else if (bin.length < 1 || bin.match(/[^01]/)) {
+          alert("请输入正确的二进制数！");
+        }
+        var dec = parseInt(bin, 2);
+        document.getElementById("result").innerHTML = "十进制数为：" + dec;
+      }
+    </script>
+  </body>
+</html>
