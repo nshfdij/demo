@@ -21,6 +21,7 @@ const router = createRouter({
       name: "xinwen",
       path: "/news",
       component: () => import("../pages/News.vue"),
+      //嵌套路由
       children: [
         {
           name: "xiang",

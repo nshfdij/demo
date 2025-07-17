@@ -19,6 +19,49 @@
 <script lang="ts" setup name="App">
 import { RouterView, RouterLink } from 'vue-router'
 import Header from './components/Header.vue'
+import { userStore } from './store/user';
+import { storeToRefs } from 'pinia';
+let user = userStore();
+
+//修改完整的state
+// user.$patch({
+//   name: 'linkai',
+// })
+
+
+const userInfo = storeToRefs(user);
+console.log(userInfo);
+
+//修改state中的某个属性
+// user.$patch((state) => {
+//   state.name = 'linkai';
+// })
+
+//修改state中的某个属性
+// user.name = 'linkai';
+
+//修改state中的某个属性
+// user.$state.name = 'linkai';
+
+//修改state中的某个属性
+// user.$reset();
+
+// 监听action,在action执行前执行
+user.$onAction((action) => {
+  console.log('action start', action.name);
+})
+
+console.log(user);
+console.log(user.name);
+console.log(user.getUsername);
+
+user.changeName('zhangsan');
+
+console.log(user.name);
+console.log(user.getUsername);
+
+//dispose方法销毁store实例
+user.$dispose();
 
 </script>
 

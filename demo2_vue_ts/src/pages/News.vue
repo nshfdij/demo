@@ -3,11 +3,17 @@
     <!-- 导航区 -->
     <ul>
       <li v-for="news in newsList" :key="news.id">
-        <button @click="showNewsDetail(news)">查看新闻</button>
+        <el-button type="primary" @click="showNewsDetail(news)">查看新闻</el-button>
         <!-- RouterLink路由跳转 -->
         <RouterLink :to="{
+          // name: 'xiang',
+          // query: {
+          //   id: news.id,
+          //   title: news.title,
+          //   content: news.content
+          // }
           name: 'xiang',
-          query: {
+          params: {
             id: news.id,
             title: news.title,
             content: news.content
@@ -28,6 +34,7 @@
 import { reactive } from 'vue'
 import { RouterView, RouterLink, useRouter } from 'vue-router'
 
+// 定义新闻列表
 const newsList = reactive([
   { id: 'asfdtrfay01', title: '很好的抗癌食物', content: '西蓝花' },
   { id: 'asfdtrfay02', title: '如何一夜暴富', content: '学IT' },
@@ -35,18 +42,30 @@ const newsList = reactive([
   { id: 'asfdtrfay04', title: '好消息！好消息！', content: '快过年了' }
 ])
 
+// 获取路由实例
 const router = useRouter()
 
+// 定义新闻接口
 interface NewsInter {
   id: string,
   title: string,
   content: string
 }
 
+// 显示新闻详情
 function showNewsDetail(news: NewsInter) {
+
+  // 使用replace方法跳转
   router.replace({
+    //要么使用name和params，要么使用path和query
     name: 'xiang',
+    // path:'detail',
     query: {
+      id: news.id,
+      title: news.title,
+      content: news.content
+    },
+    params: {
       id: news.id,
       title: news.title,
       content: news.content

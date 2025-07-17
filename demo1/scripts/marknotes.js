@@ -47,6 +47,7 @@ function createNote() {
   const emptyState = document.getElementById("emptyState");
   if (emptyState) {
     emptyState.style.display = "none";
+    emptyState.style.visibility = "hidden";
   }
 
   // 聚焦到标题输入框
@@ -90,10 +91,19 @@ function selectNote(noteId) {
     isMarkdownMode = note.isMarkdown;
     toggleFormat(isMarkdownMode ? "markdown" : "text");
 
-    // 如果是Markdown模式且有内容，显示预览；否则隐藏预览
+    // 确保 emptyState 完全隐藏且不占空间
     const emptyState = document.getElementById("emptyState");
-    if (isMarkdownMode) {
+    if (emptyState) {
       emptyState.style.display = "none";
+      emptyState.style.visibility = "hidden";
+      emptyState.style.position = "absolute";
+      emptyState.style.top = "-9999px";
+    }
+
+    // 确保编辑器内容区域显示
+    const editorContent = document.getElementById("editorContent");
+    if (editorContent) {
+      editorContent.style.display = "block";
     }
 
     // 更新活跃状态
@@ -118,8 +128,10 @@ function updateNote() {
       renderNoteList();
       updateActiveNote(currentNoteId);
       const emptyState = document.getElementById("emptyState");
+      const contentInput = document.getElementById("contentInput");
       if (note.content.trim() !== "") {
         emptyState.style.display = "none";
+        emptyState.style.visibility = "hidden";
       }
       // 如果是 Markdown 模式，更新预览
       if (isMarkdownMode) {
@@ -383,8 +395,14 @@ function showEmptyState() {
 
 // 隐藏空状态
 function hideEmptyState() {
-  document.getElementById("editorContent").style.display = "block";
-  document.getElementById("emptyState").style.display = "none";
+  const emptyState = document.getElementById("emptyState");
+  const editorContent = document.getElementById("editorContent");
+
+  editorContent.style.display = "block";
+  emptyState.style.display = "none";
+  emptyState.style.visibility = "hidden";
+  emptyState.style.position = "absolute";
+  emptyState.style.top = "-9999px";
 }
 
 // 键盘快捷键
