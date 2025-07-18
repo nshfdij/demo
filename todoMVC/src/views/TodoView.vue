@@ -1,9 +1,12 @@
 <template>
-    <Section />
+    <!-- <Section /> -->
+    <Main />
+
+
 </template>
 
 <script setup lang="ts">
-import Section from '../components/Section.vue';
+import Main from '../components/TodoMain.vue';
 
 </script>
 

@@ -4,20 +4,21 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: "/",
+      path: "/all",
       name: "all",
       component: TodoView,
     },
     {
       path: "/active",
-      name: "active",
+      name: "Active",
       component: TodoView,
     },
     {
       path: "/completed",
-      name: "completed",
+      name: "Completed",
       component: TodoView,
     },
+    { path: "/", redirect: "/all" }, // 重定向
   ],
 });
 

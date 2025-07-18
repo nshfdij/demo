@@ -3,7 +3,6 @@
         <span class="todo-count">
             <strong>{{ remaining }}</strong> {{ remaining === 1 ? "item" : "items" }} left
         </span>
-
         <ul class="filters">
             <li>
                 <!-- to属性为"/all"，如果route.path等于"/all"，则class为selected -->
@@ -18,18 +17,20 @@
                 <RouterLink to="/completed" :class="{ selected: route.path === '/completed' }">Completed</RouterLink>
             </li>
         </ul>
-        <button class="clear-completed">Clear completed</button>
+        <button class="clear-completed" v-show="todos.some(todo => todo.completed)"
+            @click="$emit('delete-completed')">Clear completed</button>
     </footer>
+    <footer class="info"></footer>
 </template>
 
 <script setup lang="ts">
 import { RouterLink, useRoute } from 'vue-router';
 import { computed } from 'vue';
-
-const props = defineProps(['todos']);
+import type { Todo } from '../interface';
+const props = defineProps<{
+    todos: Todo[]
+}>();
 const route = useRoute();
 const remaining = computed(() => props.todos.filter(todo => !todo.completed).length);
 
 </script>
-
-<style scoped></style>

@@ -18,6 +18,8 @@
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.8",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.0"
   }
 }
